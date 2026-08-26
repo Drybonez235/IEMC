@@ -1,0 +1,108 @@
+---
+// src/pages/blog/index.astro
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/global.css';  
+
+// 1. Fetch your posts dynamically from the content collection
+const allPosts = await getCollection('blog');
+
+// 2. Sort posts by publication date so the newest is always first
+const sortedPosts = allPosts.sort((a, b) => 
+  b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+
+// 3. Extract the very newest post to use for the Featured layout slot
+const featuredPost = sortedPosts[0];
+
+// 4. Group the remaining posts to safely populate the smaller grid items
+const gridPosts = sortedPosts.slice(1);
+---
+
+<BaseLayout 
+  title=" " 
+  description=""
+  image="d"
+>
+<main>
+  <!-- Hero Section -->
+  <section class="pt-24 pb-12 bg-white border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl font-bold text-gray-900 mb-2">
+       Placeholding
+      </h1>
+      <p class="text-xl text-gray-600">
+        Interpretating the the tongue of the world wide web.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Dynamic Featured Post Section -->
+      {featuredPost && (
+        <div class="mb-12">
+          <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-[#4D90B5] hover:shadow-xl transition duration-300">
+            <p class="text-sm font-semibold text-gray-500 mb-2">FEATURED ARTICLE</p>
+            <h2 class="text-3xl font-bold text-gray-900 mb-4 hover:text-[#4D90B5] transition">
+              <a href={`/blog/${featuredPost.id}/`}>
+                {featuredPost.data.title}
+              </a>
+            </h2>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              {featuredPost.data.description}
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-2 text-sm font-medium text-gray-700">
+                <span>By Jonathan Lewis</span>
+                <span>&bull;</span>
+                <time datetime={featuredPost.data.publishDate.toISOString()}>
+                  {featuredPost.data.publishDate.toLocaleDateString('en-US', { dateStyle: 'medium' })}
+                </time>
+              </div>
+              <a href={`/blog/${featuredPost.id}/`}
+                class="text-sm font-semibold text-[#4D90B5] hover:text-[#3a6d8e] transition">
+                Read Article &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <!-- Dynamic Post Grid -->
+      <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+        {gridPosts.map((post) => (
+          <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300 flex flex-col">
+            <div class="p-6 flex-grow flex flex-col">
+              <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-[#4D90B5] transition">
+                <a href={`/blog/${post.id}/`}>
+                  {post.data.title}
+                </a>
+              </h3>
+              <p class="text-sm text-gray-500 mb-4">
+                <time datetime={post.data.publishDate.toISOString()}>
+                  {post.data.publishDate.toLocaleDateString('en-US', { dateStyle: 'medium' })}
+                </time>
+              </p>
+              <p class="text-gray-600 mb-4 flex-grow">
+                {post.data.description}
+              </p>
+              <div class="mt-auto pt-4 border-t border-gray-100">
+                <p class="text-sm font-medium text-gray-700 mb-3">
+                  By Jonathan Lewis
+                </p>
+                <a href={`/blog/${post.id}/`} class="font-semibold text-[#4D90B5] hover:text-[#3a6d8e] transition">
+                  Read More &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+</main>
+</BaseLayout>

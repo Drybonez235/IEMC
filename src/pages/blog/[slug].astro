@@ -1,0 +1,78 @@
+---
+// src/pages/blog/[slug].astro
+import { getCollection, render } from 'astro:content'; // 1. Use 'render' instead of entry.render()
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+import { Image } from 'astro:assets';
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('blog');
+  return blogEntries.map(entry => ({
+    // 2. Change entry.slug to entry.id
+    params: { slug: entry.id }, props: { entry }, 
+  }));
+}
+
+const { entry } = Astro.props;
+// 3. New way to compile markdown content in Astro v6+
+const { Content } = await render(entry); 
+---
+
+<BaseLayout 
+  title={entry.data.title} 
+  description={entry.data.description} 
+  image={entry.data.image.src}
+>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+<!-- Back to Blog Navigation -->
+    <div class="mb-8">
+      <a href="/blog/" class="text-[#4D90B5] hover:text-[#3a6d8e] font-medium transition inline-flex items-center gap-1 no-underline">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+        </svg>
+        Back to all Posts
+      </a>
+    </div>
+
+    <!-- Article Header -->
+    <header class="text-center mb-10">
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight mb-4">
+        {entry.data.title}
+      </h1>
+      <div class="text-lg text-gray-500 space-x-2">
+        <span class="font-medium text-[#4D90B5]">By Jonathan Lewis</span>
+        <span>&bull;</span>
+        <time datetime={entry.data.publishDate.toISOString()}>
+          {entry.data.publishDate.toLocaleDateString('en-US', { dateStyle: 'long' })}
+        </time>
+      </div>
+    </header>
+    <figure class="mb-12 overflow-hidden rounded-xl">
+      <Image 
+        src={entry.data.image} 
+        alt={`Cover image for ${entry.data.title}`}
+        quality="high"
+        loading="eager" 
+        class="w-full md:w-3/4 h-auto object-cover mx-auto rounded-xl"
+      />
+    </figure>
+
+
+  <!-- 🌟 THE MAGIC TYPOGRAPHY CONTAINER -->
+    <article class="prose prose-slate lg:prose-lg max-w-none 
+      prose-headings:text-gray-900 
+      prose-headings:font-bold 
+      prose-p:text-gray-700 
+      prose-p:leading-relaxed 
+      prose-a:text-[#4D90B5] 
+      prose-a:no-underline 
+      hover:prose-a:text-[#3a6d8e] 
+      prose-h2:border-b 
+      prose-h2:pb-2 
+      prose-h2:border-gray-200">
+      
+      <Content />
+      
+    </article>
+    </main>
+</BaseLayout>
