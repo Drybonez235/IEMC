@@ -1,7 +1,7 @@
 ---
-const SITE_DEFAULT_TITLE = 'My Awesome Astro Base';
-const SITE_DEFAULT_DESC = 'The perfect starting point for my web projects.';
-const SITE_DEFAULT_IMG = '/default-og-image.jpg'; // Placed in public/ folder
+const SITE_DEFAULT_TITLE = 'Illinois Event Management';
+const SITE_DEFAULT_DESC = 'We provide flexible event management and event support services to organizations and individuals throughout the Chicago area.';
+const SITE_DEFAULT_IMG = '/favicon.svg'; // Placed in public/ folder
 
 export interface BusinessInfo {
   name: string;
@@ -29,17 +29,17 @@ interface Props {
 
 // 1. Initialize your default business object HERE inside the component
 const DEFAULT_BUSINESS_INFO: BusinessInfo = {
-  name: 'Christ For Life',
-  url: 'https://cflmc.org/',
+  name: 'Illinois Event Management Company',
+  url: '',
   logo: '/favicon.svg',
-  description: 'Christ for Life motorcycle club exists with the purpose of reaching the motorcycle community with the saving knowledge and love of Jesus Christ.',
-  telephone: '7739832677',
+  description: 'We provide flexible event management and event support services to organizations and individuals throughout the Chicago area.',
+  telephone: '',
   address: {
-    streetAddress: '6156 W Grand Ave',
-    addressLocality: 'Chicago',
-    addressRegion: 'IL',
-    postalCode: '60634',
-    addressCountry: 'US',
+    streetAddress: '',
+    addressLocality: '',
+    addressRegion: '',
+    postalCode: '',
+    addressCountry: '',
   },
 };
 
@@ -52,7 +52,7 @@ const {
 } = Astro.props;
 
 const canonicalURL = Astro.props.canonicalURL || new URL(Astro.url.pathname, Astro.site);
-const formattedTitle = title === SITE_DEFAULT_TITLE ? title : `${title} | ${SITE_DEFAULT_TITLE}`;
+const formattedTitle =  title;
 
 let jsonLD = null;
 

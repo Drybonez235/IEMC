@@ -1,9 +1,67 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { Image } from 'astro:assets';
-
-import exampleimg from '../assets/images/favicon.svg'
+import CallToActionBanner  from '../components/CallToActionBanner.astro';
 import '../styles/global.css';  
+
+const valueProps = [
+  {
+    title: "CLIENT FOCUSED",
+    description: "We listen, understand, and deliver beyond expectations.",
+    // Group icon
+    iconD: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+  },
+  {
+    title: "QUALITY & RELIABILITY",
+    description: "High standards and attention to every detail.",
+    // Badge/Ribbon icon
+    iconD: "M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+  },
+  {
+    title: "FLEXIBLE SOLUTIONS",
+    description: "One service or full support—we customize for your event.",
+    // Lightbulb icon
+    iconD: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 01-2 2h-4a2 2 0 01-2-2v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+  },
+  {
+    title: "TRUSTED PARTNER",
+    description: "We take ownership so you can enjoy the success of your event.",
+    // Handshake icon
+    iconD: "M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2 1m0 0l-2-1m2 1v2.5M4 7l2 1m-2-1l2-1m-2 1v2.5M10 16l2 1m-2-1l2-1m-2 1v2.5"
+  }
+];
+
+const audienceCards = [
+  {
+    title: "Educational Institutions",
+    description: "Student events, workshops, conferences, cultural programs, and more.",
+    // Graduation Cap
+    iconD: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z M12 14v6.16"
+  },
+  {
+    title: "Business & Corporate",
+    description: "Meetings, conferences, employee events, product launches, and celebrations.",
+    // Briefcase
+    iconD: "M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+  },
+  {
+    title: "Nonprofits & Community",
+    description: "Fundraisers, galas, community programs, and special initiatives.",
+    // Hands holding heart
+    iconD: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+  },
+  {
+    title: "Venues & Event Organizers",
+    description: "Additional support for catering, setup, decoration, vendors, and logistics.",
+    // Buildings
+    iconD: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m0 0v-5a2 2 0 012-2h2a2 2 0 012 2v5m-4 0h4M9 7h1m-1 4h1m4-4h1m-1 4h1"
+  },
+  {
+    title: "Personal Events",
+    description: "Weddings, birthdays, anniversaries, and other special celebrations.",
+    // Celebration / People Group
+    iconD: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+  }
+];
 ---
 
 <BaseLayout 
@@ -12,14 +70,134 @@ import '../styles/global.css';
   image="/images/home-og.jpg"
 >
   <main>
-    <h1 class="text-center" >Welcome to my new site!</h1>
-	<Image 
-        src={exampleimg} 
-        alt="Gallery submission"
-		priority
-		fit="'contain' | 'cover' | 'fill' | 'none' | 'scale-down'"
-		position='center or other css options'
-      />
+<section class="relative bg-[#030e1e] min-h-[520px] lg:min-h-[600px] flex items-center overflow-hidden">
+  <!-- Background Image with Dark Gradient Overlay -->
+  <div class="absolute inset-0 z-0">
+    <img 
+      src="/illinois-event-management-company-hero.avif" 
+      alt="People laughing at an event clapping with glee" 
+      class="w-full h-full object-cover object-right lg:object-center"
+    />
+    <!-- Gradient overlay: solid dark blue on the left fading out to reveal the crowd photo on the right -->
+    <div class="absolute inset-0 bg-gradient-to-r from-[#030e1e] via-[#030e1e]/90 to-transparent lg:to-[#030e1e]/20"></div>
+  </div>
+
+  <!-- Hero Content Container -->
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
+    <div class="max-w-2xl">
+      
+      <!-- Primary Headline -->
+      <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.15]">
+        Your Event, <br />
+        <span class="text-[#c89234]">Our Responsibility</span>
+      </h1>
+
+      <!-- Gold Divider Accent Line -->
+      <div class="w-32 h-[2px] bg-[#c89234] my-6"></div>
+
+      <!-- Subheadline -->
+      <p class="text-lg sm:text-xl text-gray-200 font-light leading-relaxed">
+        Professional Event Management, <br class="hidden sm:inline" />
+        Catering & Event Support <br />
+        <span class="text-[#c89234] font-semibold">Across Illinois</span>
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+        
+        <!-- Primary Button -->
+        <a 
+          href="/request-support" 
+          class="inline-flex items-center justify-center gap-2 bg-[#c89234] hover:bg-[#b07d28] text-white font-bold px-6 py-3.5 rounded text-xs tracking-wider uppercase shadow-lg transition-all"
+        >
+          <span>REQUEST EVENT SUPPORT</span>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+
+        <!-- Secondary Outline Button -->
+        <a 
+          href="/services" 
+          class="inline-flex items-center justify-center gap-2 border-2 border-[#c89234] hover:bg-[#c89234]/10 text-white font-bold px-6 py-3 rounded text-xs tracking-wider uppercase transition-all"
+        >
+          <span>EXPLORE OUR SERVICES</span>
+          <svg class="w-4 h-4 text-[#c89234]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="bg-[#f8f6f0] py-12 lg:py-16 text-[#030e1e]">
+  
+  <!-- Top Feature Columns -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-[#c89234]/30 pb-12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0">
+      {valueProps.map((prop, idx) => (
+        <div class={`flex items-start gap-4 lg:px-6 ${idx !== 0 ? 'lg:border-l lg:border-[#c89234]/30' : ''}`}>
+          <!-- Gold Circle Icon -->
+          <div class="w-12 h-12 rounded-full bg-[#030e1e] border-2 border-[#c89234] flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6 text-[#c89234]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={prop.iconD} />
+            </svg>
+          </div>
+          <!-- Text -->
+          <div>
+            <h3 class="font-bold text-xs tracking-wider uppercase text-[#030e1e] leading-snug">
+              {prop.title}
+            </h3>
+            <p class="text-xs text-gray-600 mt-1 leading-relaxed">
+              {prop.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Bottom Section: Who We Serve Grid -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+    <!-- Header Titles -->
+    <div class="text-center mb-10">
+      <span class="text-xs font-bold tracking-widest text-[#c89234] uppercase">
+        WHO WE SERVE
+      </span>
+      <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#030e1e] mt-2">
+        Events for Every Occasion & Every Organization
+      </h2>
+    </div>
+
+    <!-- 5 Card Layout -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      {audienceCards.map((card) => (
+        <div class="bg-white/60 border border-[#c89234]/40 rounded-sm p-6 flex flex-col items-start justify-start hover:border-[#c89234] hover:shadow-sm transition-all">
+          <!-- Outline Gold Icon -->
+          <div class="mb-4">
+            <svg class="w-10 h-10 text-[#c89234]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d={card.iconD} />
+            </svg>
+          </div>
+          <!-- Card Title -->
+          <h3 class="font-serif text-sm font-bold text-[#030e1e] leading-snug mb-2">
+            {card.title}
+          </h3>
+          <!-- Card Description -->
+          <p class="text-[11px] text-gray-600 leading-normal">
+            {card.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+</section>
+	
+<CallToActionBanner></CallToActionBanner>
   </main>
 </BaseLayout>
 

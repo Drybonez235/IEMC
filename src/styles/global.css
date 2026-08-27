@@ -2,6 +2,23 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  /* Effortlessly add or override custom theme values */
+/*fonts*/
 
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+
+
+  /* Brand Colors */
+  --color-brand-navy: hsl(216, 84%, 10%);
+  --color-brand-navy-light: hsl(217, 73%, 15%);
+  --color-brand-gold: hsl(37, 100%, 60%);
+  --color-brand-gold-hover: hsl(37, 81%, 50%);
+  --color-gold-on-blue : #c89234;
+
+  /* Backgrounds & Neutral Colors */
+  --color-bg-light: hsl(40, 25%, 97%);
+  --color-card-border: hsl(38, 17%, 89%);
+  --color-input-bg: hsl(40, 17%, 94%);
+  --color-text-primary: hsl(222, 47%, 11%);
+  --color-text-muted: hsl(215, 16%, 47%);
 }

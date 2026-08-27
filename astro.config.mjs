@@ -7,6 +7,8 @@ import tailwindcss from "@tailwindcss/vite";
 import sitemap from '@astrojs/sitemap';
 //npm run astro add sitemap
 
+import cloudflare from '@astrojs/cloudflare';
+
 
 
 export default defineConfig({
@@ -16,7 +18,7 @@ export default defineConfig({
     format: 'directory', // Ensures pages are built as /page/index.html
   },
 
-  site: 'https://example.com',
+  site: 'https://illinoiseventmanagement.com',
 
   vite: {
     plugins: [tailwindcss()],
@@ -28,4 +30,5 @@ export default defineConfig({
   },
 
   integrations: [sitemap()],
+  adapter: cloudflare(),
 });

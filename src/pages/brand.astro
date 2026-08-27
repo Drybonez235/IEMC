@@ -1,0 +1,130 @@
+---
+import BaseLayoutAstroComponent, { BaseLayout } from '../layouts/BaseLayout.astro';
+import '../styles/global.css'; 
+---
+<BaseLayoutAstroComponent
+    title="Illinois Event Management: Branding Page" 
+  description="The page that shows colors, fonts, and visuals."
+>
+<section class="min-h-screen bg-bg-light text-text-primary px-6 py-16 md:px-12 lg:px-24">
+  <div class="max-w-6xl mx-auto mb-16 border-b border-card-border pb-8">
+    <p class="text-brand-gold uppercase tracking-widest text-xs font-semibold mb-2">Style Guide & System</p>
+    <h1 class="font-serif text-4xl md:text-5xl font-bold text-brand-navy">Brand Identity Guidelines</h1>
+  </div>
+
+  <div class="max-w-6xl mx-auto space-y-20">
+    
+    <div class="space-y-6">
+      <h2 class="font-serif text-2xl md:text-3xl font-bold text-brand-navy">Color Palette</h2>
+      <p class="text-text-muted max-w-2xl">
+        Primary dark tones establish trust and authority, complemented by warm gold accents for key calls to action and interactive elements.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-4">
+        <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-card-border">
+          <div class="h-32 bg-brand-navy"></div>
+          <div class="p-4 space-y-1">
+            <h3 class="font-bold text-base">Brand Navy</h3>
+            <p class="text-xs text-text-muted">Main Headers & Footer</p>
+            <code class="text-xs block text-brand-navy font-mono pt-2">rgb(4, 21, 46)</code>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-card-border">
+          <div class="h-32 bg-brand-gold"></div>
+          <div class="p-4 space-y-1">
+            <h3 class="font-bold text-base">Brand Gold</h3>
+            <p class="text-xs text-text-muted">Primary Action & Highlights</p>
+            <code class="text-xs block text-brand-navy font-mono pt-2">rgb(212, 143, 29)</code>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-card-border">
+          <div class="h-32 bg-bg-light border-b border-card-border"></div>
+          <div class="p-4 space-y-1">
+            <h3 class="font-bold text-base">Off-White Background</h3>
+            <p class="text-xs text-text-muted">Page Backgrounds</p>
+            <code class="text-xs block text-brand-navy font-mono pt-2">rgb(249, 248, 246)</code>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-card-border">
+          <div class="h-32 bg-input-bg border-b border-card-border"></div>
+          <div class="p-4 space-y-1">
+            <h3 class="font-bold text-base">Soft Neutral</h3>
+            <p class="text-xs text-text-muted">Form Inputs & Cards</p>
+            <code class="text-xs block text-brand-navy font-mono pt-2">rgb(243, 241, 237)</code>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="space-y-6">
+      <h2 class="font-serif text-2xl md:text-3xl font-bold text-brand-navy">Typography System</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="p-6 bg-white rounded-xl border border-card-border space-y-4">
+          <span class="text-xs font-semibold text-brand-gold uppercase tracking-wider">Heading Font</span>
+          <h3 class="font-serif text-3xl font-bold text-brand-navy">Playfair Display</h3>
+          <p class="font-serif text-lg text-text-muted">
+            "Let's create something amazing together."
+          </p>
+          <p class="text-xs text-text-muted">Used for main page titles, high-impact section headers, and brand messaging statements.</p>
+        </div>
+
+        <div class="p-6 bg-white rounded-xl border border-card-border space-y-4">
+          <span class="text-xs font-semibold text-brand-gold uppercase tracking-wider">Body Font</span>
+          <h3 class="font-sans text-3xl font-bold text-brand-navy">Plus Jakarta Sans</h3>
+          <p class="font-sans text-base text-text-muted">
+            Fill out the form below and we'll get back to you as soon as possible.
+          </p>
+          <p class="text-xs text-text-muted">Used for long-form narrative body copy, navigation menus, labels, and form fields.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="space-y-6">
+      <h2 class="font-serif text-2xl md:text-3xl font-bold text-brand-navy">Component Color Applications</h2>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <div class="p-6 rounded-xl bg-brand-navy text-white flex flex-col justify-between space-y-6">
+          <div class="space-y-2">
+            <span class="text-xs text-brand-gold uppercase font-semibold">Primary Banner</span>
+            <h3 class="font-serif text-xl font-bold">Ready to Start Planning?</h3>
+            <p class="text-sm text-slate-300">Let's work together to create an event that you and your guests will remember.</p>
+          </div>
+          <button class="bg-brand-gold hover:bg-brand-gold-hover text-white font-semibold py-2.5 px-5 rounded-md text-sm transition-colors text-center w-full">
+            Let's Plan Your Event &rarr;
+          </button>
+        </div>
+
+        <div class="p-6 rounded-xl bg-white border border-card-border space-y-4">
+          <span class="text-xs text-brand-gold uppercase font-semibold">Form Controls</span>
+          <div class="space-y-3">
+            <div>
+              <label class="block text-xs font-medium text-text-primary mb-1">Full Name*</label>
+              <input type="text" placeholder="John Doe" class="w-full bg-input-bg border border-card-border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-gold" readonly />
+            </div>
+            <button class="w-full bg-brand-gold text-white font-semibold py-2.5 px-4 rounded-md text-sm shadow-sm">
+              Send Message
+            </button>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-xl bg-white border border-card-border flex flex-col items-center text-center space-y-3">
+          <div class="w-12 h-12 rounded-full border border-brand-gold flex items-center justify-center text-brand-gold">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h4 class="font-bold text-base text-brand-navy">Quick Response</h4>
+          <p class="text-xs text-text-muted">We respond to all inquiries within 24 hours guaranteed.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+</BaseLayoutAstroComponent>

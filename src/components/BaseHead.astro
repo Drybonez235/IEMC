@@ -1,16 +1,15 @@
 ---
 import SEO from './SEO.astro';
-
+import BusinessInfo from './SEO.astro';
 import '../styles/global.css'; 
 
 interface Props {
   title?: string;
   description?: string;
-  image?: string;
   businessInfo?: BusinessInfo;
 }
 
-const { title, description, image, businessInfo} = Astro.props;
+const { title, description, businessInfo} = Astro.props;
 ---
 
 
@@ -20,5 +19,5 @@ const { title, description, image, businessInfo} = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     
-    <SEO title={title} description={description} image={image}  businessInfo={businessInfo}/>
+    <SEO title={title} description={description} businessInfo={businessInfo}/>
 </head>
