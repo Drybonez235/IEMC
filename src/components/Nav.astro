@@ -38,34 +38,34 @@ import '../styles/global.css';
 </div>
 
       <!-- Desktop Navigation (Hidden on Mobile) -->
-      <nav class="hidden lg:flex items-center space-x-8 text-sm font-semibold tracking-wider uppercase">
-        <a href="/" class="hover:text-amber-500 transition-colors">HOME</a>
-        <a href="/about" class="hover:text-amber-500 transition-colors">ABOUT US</a>
-        
-        <!-- Dropdown Link -->
-        <div class="relative group">
-          <button 
-            type="button" 
-            class="flex items-center gap-1 pb-1 text-slate-100 hover:text-amber-500 focus:outline-none transition-colors"
-          >
-            <span>SERVICES</span>
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
-              <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
-            </svg>
-          </button>
-          
-          <!-- Desktop Submenu -->
-          <div class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-[#07162c] border border-gray-800 hidden group-hover:block transition-all">
-            <div class="py-2">
-              <a href="/services/planning" class="block px-4 py-2 text-xs normal-case text-gray-200 hover:bg-amber-600 hover:text-white">Event Planning</a>
-              <a href="/services/coordination" class="block px-4 py-2 text-xs normal-case text-gray-200 hover:bg-amber-600 hover:text-white">On-Site Coordination</a>
-              <a href="/services/logistics" class="block px-4 py-2 text-xs normal-case text-gray-200 hover:bg-amber-600 hover:text-white">Vendor Logistics</a>
-            </div>
-          </div>
-        </div>
+<nav class="hidden lg:flex items-center space-x-8 text-sm font-semibold tracking-wider uppercase">
+  <a href="/" class="hover:text-amber-500 transition-colors">HOME</a>
+  <a href="/about" class="hover:text-amber-500 transition-colors">ABOUT US</a>
+  
+  <!-- Dropdown Link -->
+  <div class="relative group flex items-center">
+    <button 
+      type="button" 
+      class="flex items-center gap-1 text-slate-100 hover:text-amber-500 focus:outline-none transition-colors py-2"
+    >
+      <span>SERVICES</span>
+      <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+        <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+      </svg>
+    </button>
+    
+    <!-- Desktop Submenu Wrapper (Invisible padding fills hover gap) -->
+    <div class="absolute left-0 top-full pt-2 w-48 hidden group-hover:block transition-all">
+      <div class="rounded-md shadow-lg bg-[#07162c] border border-gray-800 py-2">
+        <a href="/services/event-planning/" class="block px-4 py-2 text-xs normal-case text-gray-200 hover:bg-amber-600 hover:text-white">Planning & Coordination</a>
+        <a href="/services/event-decorating/" class="block px-4 py-2 text-xs normal-case text-gray-200 hover:bg-amber-600 hover:text-white">Decorating & Styling</a>
+        <a href="/services/event-catering/" class="block px-4 py-2 text-xs normal-case text-gray-200 hover:bg-amber-600 hover:text-white">Food & Catering</a>
+      </div>
+    </div>
+  </div>
 
-        <a href="/contact" class="hover:text-amber-500 transition-colors">CONTACT</a>
-      </nav>
+  <a href="/contact" class="hover:text-amber-500 transition-colors">CONTACT</a>
+</nav>
 
       <!-- Desktop Call To Action -->
       <div class="hidden lg:flex items-center">
@@ -114,9 +114,9 @@ import '../styles/global.css';
         </svg>
       </button>
       <div id="mobile-services-dropdown" class="hidden pl-4 space-y-2 py-2 normal-case font-normal text-gray-300">
-        <a href="/services/planning" class="block py-1 hover:text-white">Event Planning</a>
-        <a href="/services/coordination" class="block py-1 hover:text-white">On-Site Coordination</a>
-        <a href="/services/logistics" class="block py-1 hover:text-white">Vendor Logistics</a>
+        <a href="/services/event-planning/" class="block py-1 hover:text-white">Planning & Coordination</a>
+        <a href="/services/event-decorating/" class="block py-1 hover:text-white">Decorating & Styling</a>
+        <a href="/services/event-catering" class="block py-1 hover:text-white">Food & Catering</a>
       </div>
     </div>
 

@@ -1,0 +1,396 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CallToActionBanner from "../../components/CallToActionBanner.astro";
+import "../../styles/global.css";
+---
+
+<BaseLayout
+  title="Illinois Event Management Company: Event Decoration"
+  description="We provide flexible event management and event support services to organizations and individuals throughout the Chicago area."
+  image="/favicon.svg"
+>
+  <!-- Hero Section -->
+  <section
+    class="relative min-h-[520px] lg:min-h-[600px] flex items-center overflow-hidden"
+  >
+    <!-- Background Image with Dark Gradient Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img
+        src="/illinois-event-management-company-decorations.avif"
+        alt="An elegant table formaly set and decorated"
+        class="w-full h-full object-cover object-right lg:object-center"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-[#030e1e] via-[#030e1e]/40 to-transparent lg:to-[#030e1e]/15"
+      >
+      </div>
+    </div>
+
+    <!-- Hero Content Container -->
+    <div
+      class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full"
+    >
+      <div class="max-w-2xl">
+        <h1
+          class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.15]"
+        >
+          Decorating & <br />
+          <span class="text-[#c89234]">Event Styling</span>
+        </h1>
+
+        <div class="w-32 h-[2px] bg-[#c89234] my-6"></div>
+
+        <p class="text-lg sm:text-xl text-gray-200 font-light leading-relaxed">
+          Transforming spaces into stunning experiences with creativity, style,
+          and attention to detail. We design the perfect look to match your
+          theme and vision.
+        </p>
+
+        <div
+          class="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4"
+        >
+          <a
+            href="/request-support"
+            class="inline-flex items-center justify-center gap-2 bg-[#c89234] hover:bg-[#b07d28] text-white font-bold px-6 py-3.5 rounded text-xs tracking-wider uppercase shadow-lg transition-all"
+          >
+            <span>PLAN YOUR EVENT</span>
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+
+          <a
+            href="/services"
+            class="inline-flex items-center justify-center gap-2 border-2 border-[#c89234] hover:bg-[#c89234]/10 text-white font-bold px-6 py-3 rounded text-xs tracking-wider uppercase transition-all"
+          >
+            <span>EXPLORE ALL SERVICES</span>
+            <svg
+              class="w-4 h-4 text-[#c89234]"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value Highlights / Feature Icons Bar -->
+  <section
+    class="border-t border-stone-200 bg-[#FDFBF7] text-stone-800 relative z-10"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-4 divide-y sm:divide-y-0 sm:divide-x divide-stone-300/70"
+      >
+        <!-- Item 1: Custom Theme Design -->
+        <div
+          class="flex flex-col items-center text-center pt-4 sm:pt-0 sm:px-3"
+        >
+          <div
+            class="w-16 h-16 rounded-full bg-[#030e1e] text-[#c89234] flex items-center justify-center shadow-md mb-4 shrink-0"
+          >
+            <!-- Paint Palette & Brush Icon -->
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 21a9 9 0 010-18c4.97 0 9 3.58 9 8 0 2.5-1.5 4-3.5 4-1.1 0-1.5-.5-2.5-.5-.6 0-1 .4-1 1 0 2-1.5 5.5-2 5.5H12z"
+              ></path>
+              <circle cx="7.5" cy="10.5" r=".75" fill="currentColor"></circle>
+              <circle cx="12" cy="7.5" r=".75" fill="currentColor"></circle>
+              <circle cx="16.5" cy="10.5" r=".75" fill="currentColor"></circle>
+              <path d="M17.5 18.5l3.5-3.5a1.5 1.5 0 00-2.12-2.12l-3.5 3.5"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="font-serif font-bold text-base text-[#030e1e] mb-2">
+            Custom Theme Design
+          </h3>
+          <p class="text-xs text-stone-600 leading-relaxed max-w-[200px]">
+            We create unique themes that reflect your style, culture, and
+            occasion.
+          </p>
+        </div>
+
+        <!-- Item 2: Decor & Setup -->
+        <div
+          class="flex flex-col items-center text-center pt-6 sm:pt-0 sm:px-3"
+        >
+          <div
+            class="w-16 h-16 rounded-full bg-[#030e1e] text-[#c89234] flex items-center justify-center shadow-md mb-4 shrink-0"
+          >
+            <!-- Fancy Drapes Icon -->
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              viewBox="0 0 24 24"
+            >
+              <path d="M3 4h18M3 4v16M21 4v16"></path>
+              <path d="M3 4c3 6 3 10 0 16M21 4c-3 6-3 10 0 16"></path>
+              <path d="M3 4c5 3 13 3 18 0"></path>
+              <path d="M3 9c5 3 13 3 18 0"></path>
+            </svg>
+          </div>
+          <h3 class="font-serif font-bold text-base text-[#030e1e] mb-2">
+            Decor & Setup
+          </h3>
+          <p class="text-xs text-stone-600 leading-relaxed max-w-[200px]">
+            Elegant backdrops, centerpieces, stage design, tablescapes, and
+            more.
+          </p>
+        </div>
+
+        <!-- Item 3: Floral Styling -->
+        <div
+          class="flex flex-col items-center text-center pt-6 sm:pt-0 sm:px-3"
+        >
+          <div
+            class="w-16 h-16 rounded-full bg-[#030e1e] text-[#c89234] flex items-center justify-center shadow-md mb-4 shrink-0"
+          >
+            <!-- Flower Icon -->
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              viewBox="0 0 24 24"
+            >
+              <circle cx="12" cy="12" r="3"></circle>
+              <path
+                d="M12 9A3.5 3.5 0 0012 2a3.5 3.5 0 000 7zM12 15a3.5 3.5 0 000 7 3.5 3.5 0 000-7zM15 12a3.5 3.5 0 007 0 3.5 3.5 0 00-7 0zM9 12a3.5 3.5 0 00-7 0 3.5 3.5 0 007 0z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="font-serif font-bold text-base text-[#030e1e] mb-2">
+            Floral Styling
+          </h3>
+          <p class="text-xs text-stone-600 leading-relaxed max-w-[200px]">
+            Fresh floral arrangements that add beauty, color, and elegance.
+          </p>
+        </div>
+
+        <!-- Item 4: Furniture & Linen -->
+        <div
+          class="flex flex-col items-center text-center pt-6 sm:pt-0 sm:px-3"
+        >
+          <div
+            class="w-16 h-16 rounded-full bg-[#030e1e] text-[#c89234] flex items-center justify-center shadow-md mb-4 shrink-0"
+          >
+            <!-- Armchair Icon -->
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              viewBox="0 0 24 24"
+            >
+              <path d="M7 11V7a3 3 0 016 0v4"></path>
+              <path d="M5 11h14a2 2 0 012 2v4H3v-4a2 2 0 012-2z"></path>
+              <path d="M6 17v3M18 17v3M3 14h2M19 14h2"></path>
+            </svg>
+          </div>
+          <h3 class="font-serif font-bold text-base text-[#030e1e] mb-2">
+            Furniture & Linen
+          </h3>
+          <p class="text-xs text-stone-600 leading-relaxed max-w-[200px]">
+            Stylish furniture and linen selections to elevate the overall look.
+          </p>
+        </div>
+
+        <!-- Item 5: Personalized Touches -->
+        <div
+          class="flex flex-col items-center text-center pt-6 sm:pt-0 sm:px-3"
+        >
+          <div
+            class="w-16 h-16 rounded-full bg-[#030e1e] text-[#c89234] flex items-center justify-center shadow-md mb-4 shrink-0"
+          >
+            <!-- Bow Icon -->
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              viewBox="0 0 24 24"
+            >
+              <circle cx="12" cy="12" r="1.5"></circle>
+              <path d="M12 10.5C9 6.5 4 6 4 9.5c0 2.5 4.5 3 8 1z"></path>
+              <path d="M12 10.5C15 6.5 20 6 20 9.5c0 2.5-4.5 3-8 1z"></path>
+              <path d="M10.5 13L7 20M13.5 13L17 20"></path>
+            </svg>
+          </div>
+          <h3 class="font-serif font-bold text-base text-[#030e1e] mb-2">
+            Personalized Touches
+          </h3>
+          <p class="text-xs text-stone-600 leading-relaxed max-w-[200px]">
+            Small details that make a big impact and create lasting memories.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-[#faf7f2] py-16 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header Section -->
+    <div class="text-center mb-12">
+      <span class="text-xs sm:text-sm font-bold tracking-wider text-[#c89234] uppercase block mb-2">
+        Our Decorating & Styling Services
+      </span>
+      <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#030e1e] tracking-tight">
+        Designed Beautifully. Styled Perfectly.
+      </h2>
+      <div class="w-12 h-0.5 bg-[#c89234] mx-auto mt-4"></div>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+      
+      <!-- Card 1: Stage & Backdrop Design -->
+      <div class="bg-white/40 border border-stone-200/80 rounded-2xl p-6 sm:p-8 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow duration-300">
+        <div class="w-20 h-20 mb-6 flex items-center justify-center text-[#c89234]">
+          <!-- Stage & Backdrop Icon -->
+          <svg class="w-full h-full" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="12" y="10" width="40" height="34" rx="2" />
+            <path d="M12 10l20 14L52 10" />
+            <polygon points="32,22 35,28 41,29 37,33 38,39 32,36 26,39 27,33 23,29 29,28" />
+            <path d="M6 50h52v4H6z" />
+            <path d="M16 44v6M48 44v6" />
+          </svg>
+        </div>
+        <h3 class="font-serif font-bold text-lg text-[#030e1e] mb-3 leading-snug">
+          Stage & Backdrop Design
+        </h3>
+        <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+          Stunning stage and backdrop setups that become the center of attention.
+        </p>
+      </div>
+
+      <!-- Card 2: Table & Centerpiece Styling -->
+      <div class="bg-white/40 border border-stone-200/80 rounded-2xl p-6 sm:p-8 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow duration-300">
+        <div class="w-20 h-20 mb-6 flex items-center justify-center text-[#c89234]">
+          <!-- Table & Centerpiece Icon -->
+          <svg class="w-full h-full" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Vase & Flower -->
+            <path d="M32 20a3 3 0 100-6 3 3 0 000 6z" />
+            <path d="M32 14v10" />
+            <path d="M29 24h6l-1 6h-4z" />
+            <!-- Tablecloth & Table -->
+            <path d="M10 32h44" />
+            <path d="M12 32l4 18h36l4-18" />
+            <path d="M16 50v4M48 50v4" />
+            <path d="M24 32v18M32 32v18M40 32v18" />
+          </svg>
+        </div>
+        <h3 class="font-serif font-bold text-lg text-[#030e1e] mb-3 leading-snug">
+          Table & Centerpiece Styling
+        </h3>
+        <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+          Creative table layouts and centerpieces that tie the theme together beautifully.
+        </p>
+      </div>
+
+      <!-- Card 3: Fabric Draping & Ceiling Decor -->
+      <div class="bg-white/40 border border-stone-200/80 rounded-2xl p-6 sm:p-8 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow duration-300">
+        <div class="w-20 h-20 mb-6 flex items-center justify-center text-[#c89234]">
+          <!-- Draping Icon -->
+          <svg class="w-full h-full" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Curtain Pillars -->
+            <path d="M14 10v44M50 10v44" />
+            <circle cx="14" cy="10" r="3" />
+            <circle cx="50" cy="10" r="3" />
+            <!-- Swags -->
+            <path d="M14 18c10 14 26 14 36 0" />
+            <path d="M14 24c10 14 26 14 36 0" />
+            <path d="M14 13v34c4-6 4-12 0-18" />
+            <path d="M50 13v34c-4-6-4-12 0-18" />
+          </svg>
+        </div>
+        <h3 class="font-serif font-bold text-lg text-[#030e1e] mb-3 leading-snug">
+          Fabric Draping & Ceiling Decor
+        </h3>
+        <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+          Elegant draping and ceiling treatments to transform any space instantly.
+        </p>
+      </div>
+
+      <!-- Card 4: Entrance & Welcome Decor -->
+      <div class="bg-white/40 border border-stone-200/80 rounded-2xl p-6 sm:p-8 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow duration-300">
+        <div class="w-20 h-20 mb-6 flex items-center justify-center text-[#c89234]">
+          <!-- Floral Arch Icon -->
+          <svg class="w-full h-full" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Arch Structure -->
+            <path d="M16 52V28a16 16 0 0132 0v24" />
+            <path d="M22 52V28a10 10 0 0120 0v24" />
+            <!-- Pillars Base -->
+            <path d="M12 52h8M44 52h8" />
+            <!-- Arch Floral Accents -->
+            <circle cx="32" cy="12" r="3" />
+            <circle cx="18" cy="36" r="3" />
+            <circle cx="46" cy="36" r="3" />
+          </svg>
+        </div>
+        <h3 class="font-serif font-bold text-lg text-[#030e1e] mb-3 leading-snug">
+          Entrance & Welcome Decor
+        </h3>
+        <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+          Impressive entrance designs that set the tone for your event experience.
+        </p>
+      </div>
+
+      <!-- Card 5: Special Occasion Styling -->
+      <div class="bg-white/40 border border-stone-200/80 rounded-2xl p-6 sm:p-8 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow duration-300">
+        <div class="w-20 h-20 mb-6 flex items-center justify-center text-[#c89234]">
+          <!-- Gift Box / Ribbon Icon -->
+          <svg class="w-full h-full" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="12" y="24" width="40" height="28" rx="3" />
+            <path d="M32 24v28" />
+            <!-- Bow -->
+            <path d="M32 24c-4-8-14-8-12 0 2 8 12 0 12 0z" />
+            <path d="M32 24c4-8 14-8 12 0-2 8-12 0-12 0z" />
+          </svg>
+        </div>
+        <h3 class="font-serif font-bold text-lg text-[#030e1e] mb-3 leading-snug">
+          Special Occasion Styling
+        </h3>
+        <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+          From intimate gatherings to grand celebrations, we style every detail to perfection.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+</BaseLayout>
