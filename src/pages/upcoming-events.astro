@@ -1,0 +1,236 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FooterAstroComponent from '../components/Footer.astro';
+import NavAstroComponent from '../components/Nav.astro';
+import '../styles/global.css';
+
+// Sample upcoming events data structure (Set to [] to test the placeholder state)
+const events = [
+//   {
+//     title: "Annual Gala & Awards Night",
+//     date: "OCTOBER 18, 2024",
+//     time: "6:00 PM - 10:00 PM",
+//     location: "Grand Ballroom, Chicago IL",
+//     category: "Corporate",
+//     description: "An elegant evening celebrating community leaders and corporate innovation with fine dining, live entertainment, and networking.",
+//     image: "/illinois-event-management-company-upcoming-events.avif",
+//     link: "/contact/"
+//   },
+//   {
+//     title: "Midwest Corporate Leadership Summit",
+//     date: "NOVEMBER 05, 2024",
+//     time: "9:00 AM - 4:00 PM",
+//     location: "Oak Brook Convention Center, IL",
+//     category: "Conference",
+//     description: "Join industry executives for a day of insightful keynote speakers, workshops, and high-level strategic networking.",
+//     image: "/illinois-event-management-company-upcoming-events.avif",
+//     link: "/contact/"
+//   },
+//   {
+//     title: "Winter Charity Soirée",
+//     date: "DECEMBER 12, 2024",
+//     time: "7:00 PM - 11:00 PM",
+//     location: "The Drake Hotel, Chicago IL",
+//     category: "Fundraiser",
+//     description: "A magical winter-themed fundraising event benefiting local youth development initiatives featuring auctions and live music.",
+//     image: "/illinois-event-management-company-upcoming-events.avif",
+//     link: "/contact/"
+//   }
+];
+---
+
+<BaseLayout 
+  title="Illinois Event Management Company: Upcoming Events"
+  description="Check out the upcoming events hosted by Illinois Event Management Company."
+  image=""
+>
+  <main class="bg-[#030e1e] text-white min-h-screen">
+    <!-- Hero Section -->
+    <section class="relative min-h-[520px] lg:min-h-[600px] flex items-center overflow-hidden">
+      <!-- Background Image with Dark Gradient Overlay -->
+      <div class="absolute inset-0 z-0 bg-brand-navy">
+        <img
+          src="/illinois-event-management-company-upcoming-events.avif"
+          alt="Upcoming events hosted by Illinois Event Management Company"
+          class="w-full h-full object-cover object-center"
+          height="1536"
+          width="2816"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-[#030e1e] via-[#030e1e]/60 to-transparent lg:to-[#030e1e]/25">
+        </div>
+      </div>
+
+      <!-- Hero Content Container -->
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
+        <div class="max-w-2xl">
+          <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.15]">
+            Upcoming <br />
+            <span class="text-[#c89234]">Events & Experiences</span>
+          </h1>
+
+          <div class="w-32 h-[2px] bg-[#c89234] my-6"></div>
+
+          <p class="text-lg sm:text-xl text-gray-200 font-light leading-relaxed">
+            Discover our featured conferences, corporate galas, and premier community gatherings. Join us to experience world-class event planning firsthand.
+          </p>
+
+          <div class="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <a
+              href="#featured-events"
+              class="inline-flex items-center justify-center gap-2 bg-[#c89234] hover:bg-[#b07d28] text-white font-bold px-6 py-3.5 rounded text-xs tracking-wider uppercase shadow-lg transition-all"
+            >
+              <span>VIEW EVENTS CALENDAR</span>
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                ></path>
+              </svg>
+            </a>
+
+            <a
+              href="/contact/"
+              class="inline-flex items-center justify-center gap-2 border-2 border-[#c89234] hover:bg-[#c89234]/10 text-white font-bold px-6 py-3 rounded text-xs tracking-wider uppercase transition-all"
+            >
+              <span>HOST YOUR OWN EVENT</span>
+              <svg
+                class="w-4 h-4 text-[#c89234]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events List Section -->
+    <section id="featured-events" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-xs uppercase tracking-widest text-[#c89234] font-bold mb-2">Schedule & Registration</h2>
+        <h3 class="font-serif text-3xl sm:text-4xl font-bold text-white">Join Our Featured Events</h3>
+        <div class="w-16 h-[2px] bg-[#c89234] mx-auto mt-4"></div>
+      </div>
+
+      {events.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {events.map((event) => (
+            <article class="bg-[#07172e] border border-[#c89234]/20 rounded-lg overflow-hidden flex flex-col hover:border-[#c89234]/60 transition-all duration-300 shadow-xl group">
+              <!-- Event Image Banner -->
+              <div class="relative h-48 overflow-hidden">
+                <img
+                  src={event.image}
+                  alt={event.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <span class="absolute top-4 right-4 bg-[#c89234] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded">
+                  {event.category}
+                </span>
+              </div>
+
+              <!-- Content Container -->
+              <div class="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <!-- Date & Time -->
+                  <div class="flex items-center text-[#c89234] text-xs font-semibold tracking-wider mb-2 gap-2">
+                    <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <span>{event.date}</span>
+                  </div>
+
+                  <h3 class="font-serif text-xl font-bold text-white mb-3 group-hover:text-[#c89234] transition-colors">
+                    {event.title}
+                  </h3>
+
+                  <p class="text-gray-300 text-sm font-light leading-relaxed mb-6">
+                    {event.description}
+                  </p>
+                </div>
+
+                <div>
+                  <!-- Location Info -->
+                  <div class="flex items-center text-gray-400 text-xs mb-6 gap-2 border-t border-white/10 pt-4">
+                    <svg class="w-4 h-4 text-[#c89234] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <span>{event.location}</span>
+                  </div>
+
+                  <a
+                    href={event.link}
+                    class="w-full inline-flex items-center justify-center gap-2 bg-[#c89234] hover:bg-[#b07d28] text-white font-bold px-4 py-3 rounded text-xs tracking-wider uppercase transition-all"
+                  >
+                    <span>Reserve Spot / RSVP</span>
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      ) : (
+        /* Empty State Placeholder */
+        <div class="bg-[#07172e] border border-[#c89234]/30 rounded-lg p-12 text-center max-w-2xl mx-auto shadow-2xl">
+          <div class="w-16 h-16 bg-[#c89234]/10 border border-[#c89234]/40 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg class="w-8 h-8 text-[#c89234]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h4 class="font-serif text-2xl font-bold text-white mb-3">You could see your next event here.</h4>
+          <p class="text-gray-300 font-light text-base mb-8 max-w-md mx-auto leading-relaxed">
+            We are currently scheduling our upcoming calendar. Partner with us to plan, host, and highlight your next gathering!
+          </p>
+          <a
+            href="/contact/"
+            class="inline-flex items-center justify-center gap-2 bg-[#c89234] hover:bg-[#b07d28] text-white font-bold px-8 py-3.5 rounded text-xs tracking-wider uppercase shadow-lg transition-all"
+          >
+            <span>Contact Us to Learn How</span>
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
+      )}
+    </section>
+
+    <!-- Call to Action Banner -->
+    <section class="border-t border-[#c89234]/20 py-16 bg-[#020914]">
+      <div class="max-w-5xl mx-auto px-4 text-center">
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">
+          Planning an Event in Illinois?
+        </h2>
+        <p class="text-gray-300 font-light text-base sm:text-lg max-w-2xl mx-auto mb-8">
+          From grand galas to intimate corporate functions, let our expert team design and manage an unforgettable experience tailored for your brand.
+        </p>
+        <a
+          href="/contact/"
+          class="inline-flex items-center justify-center gap-2 bg-[#c89234] hover:bg-[#b07d28] text-white font-bold px-8 py-4 rounded text-xs tracking-wider uppercase shadow-xl transition-all"
+        >
+          <span>GET IN TOUCH WITH US</span>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

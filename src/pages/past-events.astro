@@ -1,0 +1,252 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FooterAstroComponent from '../components/Footer.astro';
+import NavAstroComponent from '../components/Nav.astro';
+import '../styles/global.css';
+
+// Array of past events, each featuring its own collection of carousel images
+const pastEvents = [
+  {
+    id: 'chicagoland-tech-summit',
+    title: 'Chicagoland Tech Summit & Innovation Expo',
+    date: 'October 14-15, 2025',
+    location: 'McCormick Place, Chicago, IL',
+    description: 'A premier gathering of tech innovators, venture capitalists, and industry leaders featuring keynote presentations, interactive workshops, and VIP networking receptions.',
+    images: [
+      '/illinois-event-management-company-upcoming-events.avif',
+      '/illinois-event-management-company-upcoming-events.avif',
+      '/illinois-event-management-company-upcoming-events.avif'
+    ]
+  },
+  {
+    id: 'windy-city-charity-gala',
+    title: 'Windy City Annual Philanthropy Gala',
+    date: 'December 3, 2025',
+    location: 'The Drake Hotel, Chicago, IL',
+    description: 'An elegant evening of philanthropy, gourmet dining, silent auctions, and live musical entertainment supporting community programs across Illinois.',
+    images: [
+      '/illinois-event-management-company-upcoming-events.avif',
+      '/illinois-event-management-company-upcoming-events.avif'
+    ]
+  },
+];
+---
+
+<BaseLayout 
+  title="Illinois Event Management Company: Past Events Gallery"
+  description="Explore photo galleries, highlights, and memorable moments from corporate conferences, galas, and celebrations managed by Illinois Event Management Company."
+  image="/illinois-event-management-company-past-events.avif"
+>
+  <main class="bg-[#030e1e] text-white min-h-screen">
+    <!-- Hero Section -->
+    <section class="relative min-h-[520px] lg:min-h-[600px] flex items-center overflow-hidden">
+      <!-- Background Image with Dark Gradient Overlay -->
+      <div class="absolute inset-0 z-0 bg-brand-navy">
+        <img
+          src="/illinois-event-management-company-past-events.avif"
+          alt="Past events hosted by Illinois Event Management Company"
+          class="w-full h-full object-cover object-center"
+          height="1536"
+          width="2816"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-[#030e1e] via-[#030e1e]/60 to-transparent lg:to-[#030e1e]/25">
+        </div>
+      </div>
+
+      <!-- Hero Content Container -->
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
+        <div class="max-w-2xl">
+          <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.15]">
+            Past Events <br />
+            <span class="text-[#c89234]">Gallery & Highlights</span>
+          </h1>
+
+          <div class="w-32 h-[2px] bg-[#c89234] my-6"></div>
+
+          <p class="text-lg sm:text-xl text-gray-200 font-light leading-relaxed">
+            Explore photo portfolios and memorable milestones from the premier corporate galas, conferences, and celebrations we have proudly executed across Illinois.
+          </p>
+
+          <div class="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <a
+              href="#event-galleries"
+              class="inline-flex items-center justify-center gap-2 bg-[#c89234] hover:bg-[#b07d28] text-white font-bold px-6 py-3.5 rounded text-xs tracking-wider uppercase shadow-lg transition-all"
+            >
+              <span>VIEW EVENT GALLERIES</span>
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                ></path>
+              </svg>
+            </a>
+
+            <a
+              href="/contact/"
+              class="inline-flex items-center justify-center gap-2 border-2 border-[#c89234] hover:bg-[#c89234]/10 text-white font-bold px-6 py-3 rounded text-xs tracking-wider uppercase transition-all"
+            >
+              <span>PLAN YOUR NEXT EVENT</span>
+              <svg
+                class="w-4 h-4 text-[#c89234]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events & Carousels Section -->
+    <section id="event-galleries" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">
+          Featured Event <span class="text-[#c89234]">Portfolios</span>
+        </h2>
+        <div class="w-24 h-[2px] bg-[#c89234] mx-auto mb-6"></div>
+        <p class="text-gray-300 font-light text-base sm:text-lg">
+          Each event below features an interactive carousel displaying highlights from our past productions. Use the arrow controls to browse through each album.
+        </p>
+      </div>
+
+      <div class="space-y-20">
+        {pastEvents.map((event, index) => (
+          <div class="bg-[#0b192c] border border-gray-800/80 rounded-xl overflow-hidden shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-8 p-6 lg:p-8 items-center">
+            
+            <!-- Event Info Details -->
+            <div class="lg:col-span-5 space-y-4">
+              <div class="flex items-center gap-3 text-xs uppercase tracking-widest text-[#c89234] font-semibold">
+                <span>{event.date}</span>
+                <span>•</span>
+                <span>{event.location}</span>
+              </div>
+              <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white leading-snug">
+                {event.title}
+              </h3>
+              <p class="text-gray-300 font-light leading-relaxed text-sm sm:text-base">
+                {event.description}
+              </p>
+              <div class="pt-2">
+                <span class="inline-block bg-[#030e1e] text-gray-400 text-xs px-3 py-1.5 rounded border border-gray-700 font-mono tracking-wider">
+                  Album Size: {event.images.length} Photos
+                </span>
+              </div>
+            </div>
+
+            <!-- Independent Carousel Component -->
+            <div class="lg:col-span-7 relative">
+              <div class="carousel-container relative overflow-hidden rounded-lg bg-black aspect-[16/10] shadow-inner border border-gray-800" data-carousel-index={index}>
+                
+                <!-- Slides Container -->
+                <div class="carousel-track relative w-full h-full">
+                  {event.images.map((imagePath, imgIdx) => (
+                    <div 
+                      class={`carousel-slide absolute inset-0 w-full h-full transition-opacity duration-500 ease-in-out ${imgIdx === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}
+                      data-slide-index={imgIdx}
+                    >
+                      <img 
+                        src={imagePath} 
+                        alt={`${event.title} highlight photo ${imgIdx + 1}`}
+                        class="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                  ))}
+                </div>
+
+                <!-- Carousel Controls -->
+                <button 
+                  class="carousel-prev absolute left-3 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-[#c89234] text-white p-2.5 rounded-full transition-all backdrop-blur-sm focus:outline-none"
+                  aria-label="Previous slide"
+                >
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                  </svg>
+                </button>
+
+                <button 
+                  class="carousel-next absolute right-3 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-[#c89234] text-white p-2.5 rounded-full transition-all backdrop-blur-sm focus:outline-none"
+                  aria-label="Next slide"
+                >
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </button>
+
+                <!-- Indicator Badge -->
+                <div class="absolute bottom-4 right-4 z-20 bg-black/70 backdrop-blur-sm px-3 py-1 rounded-full text-xs text-gray-200 tracking-wider font-mono border border-gray-700/50">
+                  <span class="carousel-current">1</span> / <span class="carousel-total">{event.images.length}</span>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        ))}
+      </div>
+    </section>
+  </main>
+
+</BaseLayout>
+
+<script>
+  // Client-side controller to manage multiple independent carousels on the page
+  document.addEventListener('DOMContentLoaded', () => {
+    const carousels = document.querySelectorAll('.carousel-container');
+
+    carousels.forEach(carousel => {
+      const slides = carousel.querySelectorAll('.carousel-slide');
+      const prevBtn = carousel.querySelector('.carousel-prev');
+      const nextBtn = carousel.querySelector('.carousel-next');
+      const currentCounter = carousel.querySelector('.carousel-current');
+      
+      let currentIndex = 0;
+      const totalSlides = slides.length;
+
+      function updateSlide(newIndex) {
+        // Hide current slide
+        slides[currentIndex].classList.remove('opacity-100', 'z-10');
+        slides[currentIndex].classList.add('opacity-0', 'z-0', 'pointer-events-none');
+
+        // Calculate bounded index
+        currentIndex = (newIndex + totalSlides) % totalSlides;
+
+        // Show new slide
+        slides[currentIndex].classList.remove('opacity-0', 'z-0', 'pointer-events-none');
+        slides[currentIndex].classList.add('opacity-100', 'z-10');
+
+        // Update counter text display if available
+        if (currentCounter) {
+          currentCounter.textContent = (currentIndex + 1).toString();
+        }
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          updateSlide(currentIndex - 1);
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          updateSlide(currentIndex + 1);
+        });
+      }
+    });
+  });
+</script>
