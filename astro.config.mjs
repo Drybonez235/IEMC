@@ -13,7 +13,7 @@ import cloudflare from '@astrojs/cloudflare';
 
 export default defineConfig({
   trailingSlash: 'always',
-
+output: 'static',
   build: {
     format: 'directory', // Ensures pages are built as /page/index.html
   },

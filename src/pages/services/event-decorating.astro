@@ -14,11 +14,13 @@ import "../../styles/global.css";
     class="relative min-h-[520px] lg:min-h-[600px] flex items-center overflow-hidden"
   >
     <!-- Background Image with Dark Gradient Overlay -->
-    <div class="absolute inset-0 z-0">
+    <div class="absolute inset-0 z-0 from-brand-navy to-brand-navy-light">
       <img
         src="/illinois-event-management-company-decorations.avif"
         alt="An elegant table formaly set and decorated"
         class="w-full h-full object-cover object-right lg:object-center"
+        height="1536"
+      width="2816"
       />
       <div
         class="absolute inset-0 bg-gradient-to-r from-[#030e1e] via-[#030e1e]/40 to-transparent lg:to-[#030e1e]/15"
@@ -50,7 +52,7 @@ import "../../styles/global.css";
           class="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4"
         >
           <a
-            href="/request-support"
+            href="/contact/"
             class="inline-flex items-center justify-center gap-2 bg-[#c89234] hover:bg-[#b07d28] text-white font-bold px-6 py-3.5 rounded text-xs tracking-wider uppercase shadow-lg transition-all"
           >
             <span>PLAN YOUR EVENT</span>
@@ -69,10 +71,10 @@ import "../../styles/global.css";
           </a>
 
           <a
-            href="/services"
+            href="#designs"
             class="inline-flex items-center justify-center gap-2 border-2 border-[#c89234] hover:bg-[#c89234]/10 text-white font-bold px-6 py-3 rounded text-xs tracking-wider uppercase transition-all"
           >
-            <span>EXPLORE ALL SERVICES</span>
+            <span>EXPLORE Designs</span>
             <svg
               class="w-4 h-4 text-[#c89234]"
               fill="none"
@@ -262,7 +264,7 @@ import "../../styles/global.css";
     </div>
   </section>
 
-  <section class="bg-[#faf7f2] py-16 px-4 sm:px-6 lg:px-8">
+  <section id="designs" class="bg-[#faf7f2] py-16 px-4 sm:px-6 lg:px-8">
   <div class="max-w-7xl mx-auto">
     <!-- Header Section -->
     <div class="text-center mb-12">
@@ -276,7 +278,7 @@ import "../../styles/global.css";
     </div>
 
     <!-- Cards Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+    <div  class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
       
       <!-- Card 1: Stage & Backdrop Design -->
       <div class="bg-white/40 border border-stone-200/80 rounded-2xl p-6 sm:p-8 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow duration-300">
