@@ -6,36 +6,17 @@ import '../styles/global.css';
 
 // Sample upcoming events data structure (Set to [] to test the placeholder state)
 const events = [
-//   {
-//     title: "Annual Gala & Awards Night",
-//     date: "OCTOBER 18, 2024",
-//     time: "6:00 PM - 10:00 PM",
-//     location: "Grand Ballroom, Chicago IL",
-//     category: "Corporate",
-//     description: "An elegant evening celebrating community leaders and corporate innovation with fine dining, live entertainment, and networking.",
-//     image: "/illinois-event-management-company-upcoming-events.avif",
-//     link: "/contact/"
-//   },
-//   {
-//     title: "Midwest Corporate Leadership Summit",
-//     date: "NOVEMBER 05, 2024",
-//     time: "9:00 AM - 4:00 PM",
-//     location: "Oak Brook Convention Center, IL",
-//     category: "Conference",
-//     description: "Join industry executives for a day of insightful keynote speakers, workshops, and high-level strategic networking.",
-//     image: "/illinois-event-management-company-upcoming-events.avif",
-//     link: "/contact/"
-//   },
-//   {
-//     title: "Winter Charity Soirée",
-//     date: "DECEMBER 12, 2024",
-//     time: "7:00 PM - 11:00 PM",
-//     location: "The Drake Hotel, Chicago IL",
-//     category: "Fundraiser",
-//     description: "A magical winter-themed fundraising event benefiting local youth development initiatives featuring auctions and live music.",
-//     image: "/illinois-event-management-company-upcoming-events.avif",
-//     link: "/contact/"
-//   }
+ {
+    title: "Lead. Brand. Succeed",
+    date: "OCTOBER 7th, 2026",
+    time: "6:00 PM - 8:30 PM",
+    location: "Windy City Coworking: 4336 W Lawrence Ave, Chicago IL",
+    category: "Students & Professionals",
+    description: "This workshop brings together two interactive professional development sessions in one event, facilitated by Fidel Guzman, Founder of H.E.R.O. Consulting. Through practical conversations, activities, and real-world insights, participants will explore how to strengthen their leadership identity, communicate their value, and position themselves for future professional opportunities.",
+    image: "/Lead-Brand-Succeed-Oct7-Flyer1.avif",
+    link: "https://www.eventbrite.com/e/lead-brand-succeed-leadership-career-development-workshop-registration-2001093889692"
+  },
+ 
 ];
 ---
 
@@ -151,7 +132,7 @@ const events = [
                     <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
-                    <span>{event.date}</span>
+                    <span>{event.date}</span><span>{event.time}</span>
                   </div>
 
                   <h3 class="font-serif text-xl font-bold text-white mb-3 group-hover:text-[#c89234] transition-colors">
