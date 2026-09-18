@@ -3,33 +3,33 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import FooterAstroComponent from '../components/Footer.astro';
 import NavAstroComponent from '../components/Nav.astro';
 import '../styles/global.css';
-
+const pastEvents = [];
 // Array of past events, each featuring its own collection of carousel images
-const pastEvents = [
-  {
-    id: 'chicagoland-tech-summit',
-    title: 'Chicagoland Tech Summit & Innovation Expo',
-    date: 'October 14-15, 2025',
-    location: 'McCormick Place, Chicago, IL',
-    description: 'A premier gathering of tech innovators, venture capitalists, and industry leaders featuring keynote presentations, interactive workshops, and VIP networking receptions.',
-    images: [
-      '/illinois-event-management-company-upcoming-events.avif',
-      '/illinois-event-management-company-upcoming-events.avif',
-      '/illinois-event-management-company-upcoming-events.avif'
-    ]
-  },
-  {
-    id: 'windy-city-charity-gala',
-    title: 'Windy City Annual Philanthropy Gala',
-    date: 'December 3, 2025',
-    location: 'The Drake Hotel, Chicago, IL',
-    description: 'An elegant evening of philanthropy, gourmet dining, silent auctions, and live musical entertainment supporting community programs across Illinois.',
-    images: [
-      '/illinois-event-management-company-upcoming-events.avif',
-      '/illinois-event-management-company-upcoming-events.avif'
-    ]
-  },
-];
+// const pastEvents = [
+//   {
+//     id: 'chicagoland-tech-summit',
+//     title: 'Chicagoland Tech Summit & Innovation Expo',
+//     date: 'October 14-15, 2025',
+//     location: 'McCormick Place, Chicago, IL',
+//     description: 'A premier gathering of tech innovators, venture capitalists, and industry leaders featuring keynote presentations, interactive workshops, and VIP networking receptions.',
+//     images: [
+//       '/illinois-event-management-company-upcoming-events.avif',
+//       '/illinois-event-management-company-upcoming-events.avif',
+//       '/illinois-event-management-company-upcoming-events.avif'
+//     ]
+//   },
+//   {
+//     id: 'windy-city-charity-gala',
+//     title: 'Windy City Annual Philanthropy Gala',
+//     date: 'December 3, 2025',
+//     location: 'The Drake Hotel, Chicago, IL',
+//     description: 'An elegant evening of philanthropy, gourmet dining, silent auctions, and live musical entertainment supporting community programs across Illinois.',
+//     images: [
+//       '/illinois-event-management-company-upcoming-events.avif',
+//       '/illinois-event-management-company-upcoming-events.avif'
+//     ]
+//   },
+// ];
 ---
 
 <BaseLayout 
