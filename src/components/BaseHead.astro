@@ -1,23 +1,69 @@
 ---
-import SEO from './SEO.astro';
-import BusinessInfo from './SEO.astro';
-import '../styles/global.css'; 
+import SEO from "./SEO.astro";
+import "../styles/global.css";
 
 interface Props {
   title?: string;
   description?: string;
-  businessInfo?: BusinessInfo;
+  businessInfo?: Record<string, any>; // Replace with proper type/interface import if needed
 }
 
-const { title, description, businessInfo} = Astro.props;
+const { title, description, businessInfo } = Astro.props;
 ---
 
-
 <head>
-    <meta charset="utf-8"/>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    
-    <SEO title={title} description={description} businessInfo={businessInfo}/>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="generator" content={Astro.generator} />
+
+  <!-- Meta Pixel Code -->
+  <script is:inline>
+    !(function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod
+          ? n.callMethod.apply(n, arguments)
+          : n.queue.push(arguments);
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = "2.0";
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    })(
+      window,
+      document,
+      "script",
+      "https://connect.facebook.net/en_US/fbevents.js",
+    );
+    fbq("init", "1120078364235041");
+    fbq("track", "PageView");
+  </script>
+
+  <!-- View Transitions Support (Optional: include if using Astro's ClientRouter) -->
+  <script>
+    document.addEventListener("astro:page-load", () => {
+      if (typeof window.fbq === "function") {
+        window.fbq("track", "PageView");
+      }
+    });
+  </script>
+
+  <noscript>
+    <img
+      height="1"
+      width="1"
+      style="display:none"
+      src="https://www.facebook.com/tr?id=1120078364235041&ev=PageView&noscript=1"
+    />
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
+  <SEO title={title} description={description} businessInfo={businessInfo} />
 </head>
